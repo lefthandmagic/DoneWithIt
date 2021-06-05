@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, 
-  SafeAreaView, 
-  View, Dimensions, Image} from 'react-native';
-import Card from './app/components/Card';
-import AccountScreen from './app/screens/AccountScreen';
-import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
-import ListingsScreen from './app/screens/ListingsScreen';
-import MessagesScreen from './app/screens/MessagesScreen';
-import ViewImageScreen from './app/screens/ViewImageScreen';
-import WelcomeScreen from './app/screens/WelcomeScreen';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+
+import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
+import OfflineNotice from "./app/components/OfflineNotice";
 
 export default function App() {
-
   return (
-   <ListingsScreen/>
+    <>
+      <OfflineNotice />
+      <NavigationContainer theme={navigationTheme}>
+        <AppNavigator />
+      </NavigationContainer>
+    </>
   );
 }
-
